@@ -57,6 +57,10 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Star Icon" translatesAutoresizingMaskIntoConstraints="NO" id="1mw-I9-jcc">
+                                                    <rect key="frame" x="13" y="274" width="13" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -115,4 +119,7 @@
             <point key="canvasLocation" x="-1123.1884057971015" y="-512.27678571428567"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Star Icon" width="8.5" height="8.5"/>
+    </resources>
 </document>

@@ -65,10 +65,7 @@ class Network {
                     print("Unable to parse the response in given type \(self)")
                     return errorHandler(Network.genericError)
                 }
-//                if let responseObject = try? JSONDecoder().decode(T.self, from: data) {
                     successHandler(data)
-//                    return
-//                }
             }
             errorHandler(Network.genericError)
         }

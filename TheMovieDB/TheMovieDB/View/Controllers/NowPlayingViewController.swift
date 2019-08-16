@@ -48,7 +48,6 @@ extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.movieTitle.text = viewModel.title(at: indexPath.row)
         cell.movieRating.text = String(viewModel.voteAverege(at: indexPath.row))
         viewModel.loadImage(posterPath: viewModel.posterPath(at: indexPath.row)) { (data) in
-            print("aqui")
             DispatchQueue.main.async {
                 cell.moviePoster.image = UIImage(data: data)
             }
