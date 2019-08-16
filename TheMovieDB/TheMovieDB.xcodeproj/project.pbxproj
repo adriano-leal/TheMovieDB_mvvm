@@ -7,35 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81D4A9D72306F27700860D80 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D4A9D62306F27700860D80 /* NetworkManager.swift */; };
 		81F3123D23048391003DF55C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F3123C23048391003DF55C /* AppDelegate.swift */; };
 		81F3123F23048391003DF55C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F3123E23048391003DF55C /* ViewController.swift */; };
 		81F3124423048392003DF55C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F3124323048392003DF55C /* Assets.xcassets */; };
 		81F3124723048392003DF55C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F3124523048392003DF55C /* LaunchScreen.storyboard */; };
-
 		81F312532305CCF8003DF55C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F312522305CCF8003DF55C /* Network.swift */; };
 		81F3127C2305E580003DF55C /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F3127B2305E580003DF55C /* Movies.swift */; };
-
 		BF618AA32305CC0F004FFE1C /* MovieDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF618AA22305CC0F004FFE1C /* MovieDetails.storyboard */; };
 		BF618AA52305CC33004FFE1C /* NowPlaying.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF618AA42305CC33004FFE1C /* NowPlaying.storyboard */; };
 		BF618AA72305D814004FFE1C /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF618AA62305D814004FFE1C /* MainScreen.storyboard */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81D4A9D62306F27700860D80 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		81F3123923048391003DF55C /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F3123C23048391003DF55C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81F3123E23048391003DF55C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		81F3124323048392003DF55C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81F3124623048392003DF55C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81F3124823048392003DF55C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
 		81F312522305CCF8003DF55C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		81F3127B2305E580003DF55C /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
-
 		BF618AA22305CC0F004FFE1C /* MovieDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetails.storyboard; sourceTree = "<group>"; };
 		BF618AA42305CC33004FFE1C /* NowPlaying.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NowPlaying.storyboard; sourceTree = "<group>"; };
 		BF618AA62305D814004FFE1C /* MainScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				81F312522305CCF8003DF55C /* Network.swift */,
+				81D4A9D62306F27700860D80 /* NetworkManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -197,6 +194,7 @@
 			files = (
 				81F3123F23048391003DF55C /* ViewController.swift in Sources */,
 				81F3123D23048391003DF55C /* AppDelegate.swift in Sources */,
+				81D4A9D72306F27700860D80 /* NetworkManager.swift in Sources */,
 				81F3127C2305E580003DF55C /* Movies.swift in Sources */,
 				81F312532305CCF8003DF55C /* Network.swift in Sources */,
 			);
