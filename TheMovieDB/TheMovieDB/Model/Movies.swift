@@ -11,7 +11,6 @@
 
 import Foundation
 
-// MARK: - PopularMovie
 struct Result: Codable {
     let page, totalResults, totalPages: Int
     let results: [Movie]
@@ -24,7 +23,7 @@ struct Result: Codable {
     }
 }
 
-// MARK: - Result
+
 struct Movie: Codable {
     let id: Int
     let voteAverage: Double
