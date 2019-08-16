@@ -8,12 +8,10 @@
 
 import Foundation
 
-
 class NowPlayingViewModel {
     
     private var network = Network()
     private var arrayMovies: [Movie] = []
-    
     
     func loadMovies(callback: @escaping () -> Void) {
         NetworkManager.shared.getNowPlayingMovies(networkLayer: network,
@@ -23,14 +21,11 @@ class NowPlayingViewModel {
         })
     }
     
-    
     func loadImage(posterPath: String, callback: @escaping (Data) -> Void) {
         NetworkManager.shared.getImage(networkLayer: network, posterPath: posterPath, onSuccess: { data  in
             callback(data)
         })
     }
-    
-    
     
     
     func title(at index: Int) -> String {

@@ -23,17 +23,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="265" id="Lhu-LP-kJB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="collectionCell" rowHeight="265" id="Lhu-LP-kJB" customClass="MovieCarouselTableViewCell" customModule="TheMovieDB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="265"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lhu-LP-kJB" id="etJ-Io-qja">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="264.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iHj-x6-n3h">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iHj-x6-n3h">
                                                     <rect key="frame" x="20" y="19" width="374" height="239"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="239" id="AZ5-LK-J7A"/>
+                                                    </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OYd-nD-uhJ">
                                                         <size key="itemSize" width="150" height="221"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -41,7 +43,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AjK-XP-3DD">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieCellIdentifier" id="AjK-XP-3DD">
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="221"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -91,7 +93,16 @@
                                                     </state>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="iHj-x6-n3h" secondAttribute="bottom" constant="6.5" id="8eQ-aO-QNX"/>
+                                                <constraint firstAttribute="trailing" secondItem="iHj-x6-n3h" secondAttribute="trailing" constant="20" id="IA1-PN-7ty"/>
+                                                <constraint firstItem="iHj-x6-n3h" firstAttribute="top" secondItem="etJ-Io-qja" secondAttribute="top" constant="19" id="b8O-FF-XC2"/>
+                                                <constraint firstItem="iHj-x6-n3h" firstAttribute="leading" secondItem="etJ-Io-qja" secondAttribute="leading" constant="20" id="mPv-hA-nYm"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="movieCarouselCV" destination="iHj-x6-n3h" id="a8j-cz-p4U"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="178" id="NP2-vO-m9B">
                                         <rect key="frame" x="0.0" y="293" width="414" height="178"/>
@@ -145,10 +156,13 @@
                         <viewLayoutGuide key="safeArea" id="psK-YU-ecG"/>
                     </view>
                     <navigationItem key="navigationItem" title="MovieDB" id="4LA-QE-qI1"/>
+                    <connections>
+                        <outlet property="searchTableView" destination="piI-Wb-5no" id="xuw-gM-eaW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P75-fn-gNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-762" y="-116"/>
+            <point key="canvasLocation" x="-1067" y="-130"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ecf-ki-3M9">
@@ -164,7 +178,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnL-DH-obA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1884" y="-117"/>
+            <point key="canvasLocation" x="-1886" y="-84"/>
         </scene>
     </scenes>
 </document>

@@ -18,7 +18,6 @@ class NowPlayingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         nowPlayingCollectionView.delegate = self
         nowPlayingCollectionView.dataSource = self
         
