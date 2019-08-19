@@ -17,7 +17,8 @@ class NetworkManager {
                     onSucess: @escaping ([Movie]) -> Void,
                     onError: @escaping ((String) -> Void) = {_ in return}) {
         let successHandler: (Result) -> Void = { (results) in
-            self.movies.append(contentsOf: results.results)
+            self.movies = results.results
+
             onSucess(self.movies)
         }
         
@@ -32,7 +33,8 @@ class NetworkManager {
                              onSuccess: @escaping ([Movie]) -> Void,
                              onError: @escaping ((String) -> Void) = {_ in return}) {
         let successHandler: (Result) -> Void = { (results) in
-            self.movies.append(contentsOf: results.results)
+            self.movies = results.results
+
             onSuccess(self.movies)
         }
         

@@ -24,6 +24,7 @@ class SearchViewController: UIViewController {
         viewModel.loadMovies {
             DispatchQueue.main.async {
                 self.searchTableView.reloadData()
+                print("here")
             }
         }
     }
@@ -37,7 +38,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let identifier = "collectionCell"
+        let identifier = "searchMovieCellIdentifier"
+
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? MovieCarouselTableViewCell else { fatalError() }
             
@@ -60,6 +62,7 @@ extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let identifier: String = "movieCellIdentifier"
+
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? MovieCollectionViewCell else { fatalError() }
         
         cell.movieTitle.text = viewModel.title(at: indexPath.row)

@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="collectionCell" rowHeight="265" id="Lhu-LP-kJB" customClass="MovieCarouselTableViewCell" customModule="TheMovieDB" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchMovieCellIdentifier" rowHeight="265" id="Lhu-LP-kJB" customClass="MovieCarouselTableViewCell" customModule="TheMovieDB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="265"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lhu-LP-kJB" id="etJ-Io-qja">
@@ -36,15 +36,15 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="239" id="AZ5-LK-J7A"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OYd-nD-uhJ">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OYd-nD-uhJ">
                                                         <size key="itemSize" width="150" height="221"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieCellIdentifier" id="AjK-XP-3DD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="221"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieCellIdentifier" id="AjK-XP-3DD" customClass="MovieCollectionViewCell" customModule="TheMovieDB" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="9" width="150" height="221"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="221"/>
@@ -64,7 +64,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29C-oO-5Op">
                                                                         <rect key="frame" x="35" y="198" width="18" height="18"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -75,6 +75,11 @@
                                                                 </subviews>
                                                             </view>
                                                             <size key="customSize" width="150" height="221"/>
+                                                            <connections>
+                                                                <outlet property="moviePoster" destination="Kn1-nW-3oL" id="tbD-zw-eKX"/>
+                                                                <outlet property="movieRating" destination="29C-oO-5Op" id="qEZ-aI-dRl"/>
+                                                                <outlet property="movieTitle" destination="Zbh-sE-V9a" id="UQk-5F-4Bq"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
@@ -88,9 +93,13 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5d-XH-n51">
                                                     <rect key="frame" x="333" y="0.0" width="61" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="See All">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="okM-KP-asc" kind="show" id="RbO-WF-hbF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -104,7 +113,7 @@
                                             <outlet property="movieCarouselCV" destination="iHj-x6-n3h" id="a8j-cz-p4U"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="178" id="NP2-vO-m9B">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="popularCellIdentifier" rowHeight="178" id="NP2-vO-m9B" customClass="PopularMoviesTableViewCell" customModule="TheMovieDB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="293" width="414" height="178"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NP2-vO-m9B" id="5YT-N6-CWP">
@@ -143,6 +152,12 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="movieDescription" destination="sNL-Gv-k5d" id="SJi-4J-jrQ"/>
+                                            <outlet property="moviePoster" destination="Zz5-ED-NP4" id="kY1-ak-c1k"/>
+                                            <outlet property="movieRating" destination="vHw-65-xM2" id="gpO-i2-QXQ"/>
+                                            <outlet property="movieTitle" destination="eGN-6s-ynp" id="UwJ-oK-7nG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -163,6 +178,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P75-fn-gNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1067" y="-130"/>
+        </scene>
+        <!--NowPlaying-->
+        <scene sceneID="Lkl-FK-YKd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NowPlaying" id="okM-KP-asc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ygg-LG-bfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-147" y="-309"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ecf-ki-3M9">
