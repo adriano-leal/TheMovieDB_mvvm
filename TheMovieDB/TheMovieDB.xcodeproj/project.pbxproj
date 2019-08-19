@@ -163,8 +163,8 @@
 		BFA43FAC2306EBDE006DE7F8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BFA43FAD2306EC27006DE7F8 /* MovieDetailsViewController.swift */,
 				BFA43FB12306EC40006DE7F8 /* SearchViewController.swift */,
+				BFA43FAD2306EC27006DE7F8 /* MovieDetailsViewController.swift */,
 				BFA43FAF2306EC33006DE7F8 /* NowPlayingViewController.swift */,
 			);
 			path = Controllers;

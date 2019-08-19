@@ -10,16 +10,16 @@ import Foundation
 
 class NetworkManager {
     
-    static let shared = NetworkManager()
+    
     var movies: [Movie] = []
     
     func getPopularMovies(networkLayer: Network,
-                    onSucess: @escaping ([Movie]) -> Void,
+                    onSuccess: @escaping ([Movie]) -> Void,
                     onError: @escaping ((String) -> Void) = {_ in return}) {
         let successHandler: (Result) -> Void = { (results) in
             self.movies = results.results
 
-            onSucess(self.movies)
+            onSuccess(self.movies)
         }
         
         networkLayer.get(urlString: "https://api.themoviedb.org/3/movie/popular?api_key=3efb9474b7341b05c9d3cd97558608bd&language=en-US&page=1",

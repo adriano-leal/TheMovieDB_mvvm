@@ -11,18 +11,33 @@ import Foundation
 class NowPlayingViewModel {
     
     private var network = Network()
+    var networkManager: NetworkManager = NetworkManager()
     private var arrayMovies: [Movie] = []
     
+    private var arrayMoviesPopular: [Movie] = []
+
+    
+    
     func loadMovies(callback: @escaping () -> Void) {
-        NetworkManager.shared.getNowPlayingMovies(networkLayer: network,
+        networkManager.getNowPlayingMovies(networkLayer: network,
                                                   onSuccess:{ movies in
-                                                    self.arrayMovies =  NetworkManager.shared.movies
+                                                    //self.arrayMovies =  NetworkManager.shared.movies
+                                                    self.arrayMovies = self.networkManager.movies
+                                                    callback()
+        })
+    }
+    
+    func loadMoviesPopular(callback: @escaping () -> Void) {
+        networkManager.getPopularMovies(networkLayer: network,
+                                               onSuccess:{ movies in
+                                                    //self.arrayMovies =  NetworkManager.shared.movies
+                                                    self.arrayMovies = self.networkManager.movies
                                                     callback()
         })
     }
     
     func loadImage(posterPath: String, callback: @escaping (Data) -> Void) {
-        NetworkManager.shared.getImage(networkLayer: network, posterPath: posterPath, onSuccess: { data  in
+        networkManager.getImage(networkLayer: network, posterPath: posterPath, onSuccess: { data  in
             callback(data)
         })
     }

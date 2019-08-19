@@ -10,15 +10,6 @@ import UIKit
 
 class PopularMoviesTableViewCell: UITableViewCell {
 
-    
-    /*
-     
-     @IBOutlet weak var moviePoster: UIImageView!
-     @IBOutlet weak var movieTitle: UILabel!
-     @IBOutlet weak var movieRating: UILabel!
-     @IBOutlet weak var starRating: UIImageView!
- */
-    
     @IBOutlet weak var moviePoster: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieDescription: UITextView!
