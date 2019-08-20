@@ -13,7 +13,6 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchTableView: UITableView!    
     var viewModelNowPlaying: NowPlayingViewModel = NowPlayingViewModel()
     var popularViewModel: PopularMoviesViewModel = PopularMoviesViewModel()
-    var viewModelSearch: SearchViewModel = SearchViewModel()
 
     
     override func viewDidLoad() {
@@ -46,7 +45,7 @@ class SearchViewController: UIViewController {
             if viewModelNowPlaying.isSelected {
                 nextViewController.movieName = viewModelNowPlaying.title(at: indexPath.row)
                 nextViewController.rating = String(viewModelNowPlaying.voteAverege(at: indexPath.row))
-                //            nextViewController.genre = String(viewModelSearch.genre(at: indexPath.row))
+//                nextViewController.genre = String(viewModelNowPlaying.genre(at: indexPath.row))
                 nextViewController.overview = viewModelNowPlaying.overview(at: indexPath.row)
                 
                 viewModelNowPlaying.loadImage(posterPath: viewModelNowPlaying.posterPath(at: indexPath.row)) { (data) in
@@ -59,7 +58,7 @@ class SearchViewController: UIViewController {
             else {
                 nextViewController.movieName = popularViewModel.title(at: indexPath.row)
                 nextViewController.rating = String(popularViewModel.voteAverege(at: indexPath.row))
-                //            nextViewController.genre = String(viewModelSearch.genre(at: indexPath.row))
+//                nextViewController.genre = String(popularViewModel.genre(at: indexPath.row))
                 nextViewController.overview = popularViewModel.overview(at: indexPath.row)
                 
 //                popularViewModel.loadImage(posterPath: popularViewModel.posterPath(at: indexPath.row)) { (data) in
@@ -102,7 +101,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.movieTitle.text = popularViewModel.title(at: indexPath.row)
                 cell.movieRating.text = String(popularViewModel.voteAverege(at: indexPath.row))
                 cell.movieDescription.text = popularViewModel.overview(at: indexPath.row)
-                viewModelSearch.loadImage(posterPath: popularViewModel.posterPath(at: indexPath.row)) { (data) in
+                popularViewModel.loadImage(posterPath: popularViewModel.posterPath(at: indexPath.row)) { (data) in
                     DispatchQueue.main.async {
                         cell.moviePoster.image = UIImage(data: data)
                     }
