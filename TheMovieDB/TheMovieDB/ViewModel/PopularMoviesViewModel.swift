@@ -8,31 +8,24 @@
 
 import Foundation
 
-class NowPlayingViewModel {
+class PopularMoviesViewModel {
     
     private var network = Network()
     var networkManager: NetworkManager = NetworkManager()
-    private var arrayMovies: [Movie] = []
     
     var isSelected: Bool = false
+    
+    private var arrayMovies: [Movie] = []
+    
+    
 
-    
-    
-    func loadMovies(callback: @escaping () -> Void) {
-        networkManager.getNowPlayingMovies(networkLayer: network,
-                                                  onSuccess:{ movies in
-                                                    //self.arrayMovies =  NetworkManager.shared.movies
-                                                    self.arrayMovies = self.networkManager.movies
-                                                    callback()
-        })
-    }
     
     func loadMoviesPopular(callback: @escaping () -> Void) {
         networkManager.getPopularMovies(networkLayer: network,
-                                               onSuccess:{ movies in
-                                                    //self.arrayMovies =  NetworkManager.shared.movies
-                                                    self.arrayMovies = self.networkManager.movies
-                                                    callback()
+                                        onSuccess:{ movies in
+                                            //self.arrayMovies =  NetworkManager.shared.movies
+                                            self.arrayMovies = self.networkManager.movies
+                                            callback()
         })
     }
     

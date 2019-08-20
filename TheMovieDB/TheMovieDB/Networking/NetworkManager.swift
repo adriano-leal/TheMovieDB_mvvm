@@ -10,7 +10,6 @@ import Foundation
 
 class NetworkManager {
     
-    
     var movies: [Movie] = []
     private var apiKey: String = "3efb9474b7341b05c9d3cd97558608bd"
     

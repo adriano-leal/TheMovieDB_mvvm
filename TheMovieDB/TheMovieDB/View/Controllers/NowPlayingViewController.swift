@@ -46,11 +46,11 @@ class NowPlayingViewController: UIViewController {
 //                DispatchQueue.main.async {
 //                    detailsViewController.moviePoster.image = UIImage(data: data)
 //                }
-            }
+//            }
         }
     }
     
-
+}
     
 
 
