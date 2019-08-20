@@ -21,7 +21,6 @@ class NowPlayingViewModel {
     func loadMovies(callback: @escaping () -> Void) {
         networkManager.getNowPlayingMovies(networkLayer: network,
                                                   onSuccess:{ movies in
-                                                    //self.arrayMovies =  NetworkManager.shared.movies
                                                     self.arrayMovies = self.networkManager.movies
                                                     callback()
         })
@@ -30,7 +29,6 @@ class NowPlayingViewModel {
     func loadMoviesPopular(callback: @escaping () -> Void) {
         networkManager.getPopularMovies(networkLayer: network,
                                                onSuccess:{ movies in
-                                                    //self.arrayMovies =  NetworkManager.shared.movies
                                                     self.arrayMovies = self.networkManager.movies
                                                     callback()
         })

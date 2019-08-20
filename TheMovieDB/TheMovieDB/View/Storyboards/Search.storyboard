@@ -29,7 +29,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="searchMovieCellIdentifier" rowHeight="315" id="Lhu-LP-kJB" customClass="MovieCarouselTableViewCell" customModule="TheMovieDB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="315"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lhu-LP-kJB" id="etJ-Io-qja">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lhu-LP-kJB" id="etJ-Io-qja">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="315"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -54,27 +54,27 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Film Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbh-sE-V9a">
-                                                                        <rect key="frame" x="32" y="163" width="128" height="17"/>
+                                                                        <rect key="frame" x="32" y="197" width="128" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kn1-nW-3oL">
-                                                                        <rect key="frame" x="28" y="-20" width="137" height="168"/>
+                                                                        <rect key="frame" x="28" y="14" width="137" height="168"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="137" id="3QF-6i-Yiq"/>
                                                                             <constraint firstAttribute="height" constant="168" id="NI1-a5-4cF"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Icon" translatesAutoresizingMaskIntoConstraints="NO" id="m8F-gu-Aoa">
-                                                                        <rect key="frame" x="28" y="190" width="19" height="19"/>
+                                                                        <rect key="frame" x="28" y="224" width="19" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="Gnc-kC-SXS"/>
                                                                             <constraint firstAttribute="width" constant="19" id="ipg-Yk-dKu"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29C-oO-5Op">
-                                                                        <rect key="frame" x="53" y="191" width="18" height="18"/>
+                                                                        <rect key="frame" x="53" y="225" width="18" height="18"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="18" id="FDt-pL-lg3"/>
                                                                             <constraint firstAttribute="height" constant="18" id="zRU-F5-dTc"/>
@@ -230,7 +230,7 @@
                 <viewControllerPlaceholder storyboardName="NowPlaying" id="okM-KP-asc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ygg-LG-bfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-247" y="-277"/>
+            <point key="canvasLocation" x="-354" y="-196"/>
         </scene>
         <!--MovieDetails-->
         <scene sceneID="dWa-me-dFm">
@@ -238,7 +238,7 @@
                 <viewControllerPlaceholder storyboardName="MovieDetails" id="t7T-S0-wDV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pqw-1H-w3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="-46"/>
+            <point key="canvasLocation" x="-349" y="64"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ecf-ki-3M9">

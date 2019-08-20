@@ -12,7 +12,6 @@ class NowPlayingViewController: UIViewController {
 
     @IBOutlet weak var nowPlayingCollectionView: UICollectionView!
     var viewModel: NowPlayingViewModel = NowPlayingViewModel()
-    
     @IBOutlet weak var labelResults: UILabel!
     
     override func viewDidLoad() {
