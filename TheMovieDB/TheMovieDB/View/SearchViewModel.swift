@@ -29,7 +29,6 @@ class SearchViewModel {
         })
     }
     
-    
     func title(at index: Int) -> String {
         return arrayMovies[index].title
     }

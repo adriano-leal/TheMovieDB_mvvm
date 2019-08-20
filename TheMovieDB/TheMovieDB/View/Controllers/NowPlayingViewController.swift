@@ -18,6 +18,10 @@ class NowPlayingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Now Playing"
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+
+        
         nowPlayingCollectionView.delegate = self
         nowPlayingCollectionView.dataSource = self
         
@@ -30,13 +34,38 @@ class NowPlayingViewController: UIViewController {
 
     }
     
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailsViewController = segue.destination as? MovieDetailsViewController, let indexPath = sender as? IndexPath {
+            
+            detailsViewController.movieName = viewModel.title(at: indexPath.row)
+            detailsViewController.rating = String(viewModel.voteAverege(at: indexPath.row))
+            //genres
+            detailsViewController.overview = viewModel.overview(at: indexPath.row)
+            
+//            viewModel.loadImage(posterPath: viewModel.posterPath(at: indexPath.row)) { (data) in
+//                DispatchQueue.main.async {
+//                    detailsViewController.moviePoster.image = UIImage(data: data)
+//                }
+            }
+        }
+    }
+    
+
+    
+
 
 
 extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems()
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        nowPlayingCollectionView.cellForItem(at: indexPath)?.isSelected = false
+        performSegue(withIdentifier: "detailsFromNowPlayingSegue", sender: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

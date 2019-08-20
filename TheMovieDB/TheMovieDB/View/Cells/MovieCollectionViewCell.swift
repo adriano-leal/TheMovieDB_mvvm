@@ -15,4 +15,11 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var movieRating: UILabel!
     @IBOutlet weak var starRating: UIImageView!
     
+    override func awakeFromNib() {
+        
+        moviePoster.layer.cornerRadius = 10
+        moviePoster.clipsToBounds = true
+        
+    }
+    
 }

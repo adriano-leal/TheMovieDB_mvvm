@@ -18,13 +18,13 @@ class PopularMoviesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        moviePoster.layer.cornerRadius = 10
+        moviePoster.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        super.setSelected(selected, animated: true)
     }
 
 }
