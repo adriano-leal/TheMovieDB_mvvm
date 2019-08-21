@@ -65,7 +65,6 @@ class SearchViewController: UIViewController {
                         nextViewController.moviePoster.image = UIImage(data: data)
                     }
                 }
-
             }
         }
     }

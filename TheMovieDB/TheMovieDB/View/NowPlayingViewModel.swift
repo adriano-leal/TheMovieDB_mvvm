@@ -15,7 +15,6 @@ class NowPlayingViewModel {
     private var arrayMovies: [Movie] = []
     
     var isSelected: Bool = false
-
     
     
     func loadMovies(callback: @escaping () -> Void) {
@@ -39,7 +38,6 @@ class NowPlayingViewModel {
             callback(data)
         })
     }
-    
     
     func title(at index: Int) -> String {
         return arrayMovies[index].title

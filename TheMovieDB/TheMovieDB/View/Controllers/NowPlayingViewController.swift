@@ -76,7 +76,6 @@ extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDa
             }
         }
         
-        
         return cell
     }
     
