@@ -35,7 +35,6 @@ class SearchViewController: UIViewController {
                 self.searchTableView.reloadData()
             }
         }
-        
     }
     
     
@@ -61,11 +60,11 @@ class SearchViewController: UIViewController {
 //                nextViewController.genre = String(popularViewModel.genre(at: indexPath.row))
                 nextViewController.overview = popularViewModel.overview(at: indexPath.row)
                 
-//                popularViewModel.loadImage(posterPath: popularViewModel.posterPath(at: indexPath.row)) { (data) in
-//                    DispatchQueue.main.async {
-//                        nextViewController.moviePoster.image = UIImage(data: data)
-//                    }
-//                }
+                popularViewModel.loadImage(posterPath: popularViewModel.posterPath(at: indexPath.row)) { (data) in
+                    DispatchQueue.main.async {
+                        nextViewController.moviePoster.image = UIImage(data: data)
+                    }
+                }
 
             }
         }
@@ -121,8 +120,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == 0 {
             viewModelNowPlaying.isSelected = true
+            popularViewModel.isSelected = false
         } else {
             popularViewModel.isSelected = true
+            viewModelNowPlaying.isSelected = false
+
         }
         performSegue(withIdentifier: "detailsSegue", sender: indexPath)
         

@@ -40,19 +40,16 @@ class NowPlayingViewController: UIViewController {
             detailsViewController.rating = String(viewModel.voteAverege(at: indexPath.row))
             //genres
             detailsViewController.overview = viewModel.overview(at: indexPath.row)
+            viewModel.loadImage(posterPath: viewModel.posterPath(at: indexPath.row)) { (data) in
+                DispatchQueue.main.async {
+                    detailsViewController.moviePoster.image = UIImage(data: data)
+                }
+            }
             
-//            viewModel.loadImage(posterPath: viewModel.posterPath(at: indexPath.row)) { (data) in
-//                DispatchQueue.main.async {
-//                    detailsViewController.moviePoster.image = UIImage(data: data)
-//                }
-//            }
         }
     }
     
 }
-    
-
-
 
 extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -62,7 +59,6 @@ extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDa
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         nowPlayingCollectionView.cellForItem(at: indexPath)?.isSelected = false
         performSegue(withIdentifier: "detailsFromNowPlayingSegue", sender: indexPath)
     }

@@ -43,6 +43,15 @@ class NetworkManager {
                          errorHandler: onError)
     }
     
+//    func getGenres(networkLayer: Network,
+//                              posterPath: String,
+//                              onSuccess: @escaping ([Movie]) -> Void,
+//                              onError: @escaping ((String) -> Void) = {_ in return}) {
+//        let successHandler: (Result) -> Void = { (results) in
+//            self.movies = results.results
+//        }
+//    }
+    
     func getImage(networkLayer: Network,
                              posterPath: String,
                              onSuccess: @escaping (Data) -> Void,
@@ -51,7 +60,7 @@ class NetworkManager {
             onSuccess(data)
         }
         
-        networkLayer.getData(urlString: "https://image.tmdb.org/t/p/w500/\(posterPath)",
+        networkLayer.getData(urlString: "https://image.tmdb.org/t/p/w500\(posterPath)",
                          successHandler: successHandler,
                          errorHandler: onError)
     }
